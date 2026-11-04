@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crebit — Offline UPI Expense Tracker & Split Manager for Android</title>
+
+  <meta name="description"
+    content="Crebit is a modern, 100% offline personal finance and money manager for Android. Featuring instant UPI QR scanning, intelligent expense splits, multi-account net worth, visual analytics, and home screen widgets.">
+  <meta name="keywords"
+    content="Crebit, Personal Account Manager, Expense Tracker, UPI QR Scanner, Split Expenses, Offline Money Manager, Android Finance App, Android Widgets">
+  <meta name="theme-color" content="#121214">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crebit — Master Your Money. Split Seamlessly. 100% Private.">
+  <meta property="og:description"
+    content="Instant UPI QR scanning, smart bill splitting, multi-account net worth, and interactive Android widgets. Zero ads. 100% offline.">
+  <meta property="og:image" content="assets/images/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo-transparent.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+  <!-- Fonts & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
+</head>
+
+<body>
+
+  <!-- ===================================================================
+       Navigation Bar
+       =================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-brand">
+        <img src="assets/images/logo.png" alt="Crebit Logo">
+        <span>Crebit</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#scanner" class="nav-link">UPI Scanner</a></li>
+          <li><a href="#splits" class="nav-link">Splits</a></li>
+          <li><a href="#widgets" class="nav-link">Widgets</a></li>
+          <li><a href="#privacy" class="nav-link">Privacy</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Switcher Segmented Control -->
+        <div class="theme-switch" role="group" aria-label="Theme Switcher">
+          <button class="theme-btn" data-theme-choice="light" title="Light Theme">
+            <span>☀️</span>
+          </button>
+          <button class="theme-btn active" data-theme-choice="dark" title="Dark Theme">
+            <span>🌙</span>
+          </button>
+          <button class="theme-btn" data-theme-choice="system" title="System Default">
+            <span>💻</span>
+          </button>
+        </div>
+
+        <a href="#download" class="btn btn-primary btn-sm">
+          <span>Download</span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       Hero Section
+       =================================================================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+
+        <h1 class="hero-title">
+          Master Your Money.<br>
+          Split Seamlessly.<br>
+          <span class="gradient-text">100% Private.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          The modern personal finance tracker built specifically for India. Scan UPI QR codes on the fly, track
+          multi-account net worth, split expenses without cloud sign-ups, and glance at interactive home
+          screen widgets.
+        </p>
+
+        <div class="hero-cta">
+          <a href="download/crebit-app.apk" class="btn btn-primary btn-lg" download="crebit-app.apk">
+            <span>⚡ Download APK</span>
+            <span style="font-size: 0.8rem; opacity: 0.85;">(v1.0 • 25 MB)</span>
+          </a>
+          <a href="#features" class="btn btn-secondary btn-lg">
+            <span>Explore Features ↓</span>
+          </a>
+        </div>
+
+        <div class="hero-info-row">
+          <div class="hero-info-item">
+            <span>📱</span>
+            <span>Android 8.0+</span>
+          </div>
+          <div class="hero-info-item">
+            <span>🔒</span>
+            <span>No Account Needed</span>
+          </div>
+          <div class="hero-info-item">
+            <span>🚫</span>
+            <span>Zero Advertisements</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Phone Frame -->
+      <div class="hero-visual">
+        <div class="phone-mockup-wrapper">
+          <!-- Floating Badge 1 -->
+          <div class="float-card float-card-1">
+            <div class="float-icon green">₹</div>
+            <div>
+              <div class="float-text-main">Salary Credited</div>
+              <div class="float-text-sub">+₹75,000 • HDFC Bank</div>
+            </div>
+          </div>
+
+          <!-- Phone Mockup Frame -->
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <img class="theme-screenshot theme-screenshot-light" src="assets/images/light/screenshot-hero.png"
+                alt="Crebit Dashboard Overview (Light Theme)" onerror="this.src='assets/images/screenshot-hero.png'">
+              <img class="theme-screenshot theme-screenshot-dark" src="assets/images/dark/screenshot-hero.png"
+                alt="Crebit Dashboard Overview (Dark Theme)" onerror="this.src='assets/images/screenshot-hero.png'">
+            </div>
+          </div>
+
+          <!-- Floating Badge 2 -->
+          <div class="float-card float-card-2">
+            <div class="float-icon blue">👥</div>
+            <div>
+              <div class="float-text-main">Trip Split Settled</div>
+              <div class="float-text-sub">₹2,400 received</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Stats Banner
+       =================================================================== -->
+  <section class="stats-banner">
+    <div class="container stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number">
+          <span class="stat-count highlight" data-target="100" data-suffix="%">100%</span>
+        </div>
+        <div class="stat-label">Offline & Private On-Device</div>
+      </div>
+
+      <div class="stat-item reveal">
+        <div class="stat-number">
+          <span class="stat-count" data-target="0">0</span>
+        </div>
+        <div class="stat-label">Cloud Trackers or Ads</div>
+      </div>
+
+      <div class="stat-item reveal">
+        <div class="stat-number">
+          <span class="stat-count highlight" data-target="0.3" data-prefix="< " data-suffix="s">&lt; 0.3s</span>
+        </div>
+        <div class="stat-label">Camera UPI Scan Latency</div>
+      </div>
+
+      <div class="stat-item reveal">
+        <div class="stat-number">
+          <span class="highlight">Material 3</span>
+        </div>
+        <div class="stat-label">Modern Jetpack Compose UI</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Core Features Grid Overview
+       =================================================================== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Powerful Simplicity</span>
+        <h2 class="section-title">Everything You Need to Run Your Personal Finances</h2>
+        <p class="section-description">
+          Designed from the ground up for speed, elegance, and peace of mind. No bloat, no subscription gates, no login
+          forms.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">📷</div>
+          <h3 class="feature-card-title">Instant UPI QR Scanner</h3>
+          <p class="feature-card-desc">
+            Point your camera at any BharatQR, PhonePe, Google Pay, or Paytm merchant QR code. Crebit extracts payee
+            name, UPI VPA, and pre-filled amount in milliseconds.
+          </p>
+          <div class="feature-card-chips">
+            <span class="feature-chip">CameraX</span>
+            <span class="feature-chip">Auto-fill</span>
+            <span class="feature-chip">UPI Intent</span>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">🤝</div>
+          <h3 class="feature-card-title">Smart Bill Splits</h3>
+          <p class="feature-card-desc">
+            Split group meals, apartment groceries, or travel expenses. Supports equal splits and custom my-share
+            calculations with a dedicated receivables tracker.
+          </p>
+          <div class="feature-card-chips">
+            <span class="feature-chip">Equal / Custom</span>
+            <span class="feature-chip">Receivables</span>
+            <span class="feature-chip">Batch Collect</span>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">💳</div>
+          <h3 class="feature-card-title">Multi-Account Net Worth</h3>
+          <p class="feature-card-desc">
+            Manage Bank Accounts, Credit Cards, Cash, Savings, and Digital Wallets. Credit card balances are
+            automatically treated as liabilities for accurate net worth.
+          </p>
+          <div class="feature-card-chips">
+            <span class="feature-chip">Debt Tracking</span>
+            <span class="feature-chip">Custom Icons</span>
+            <span class="feature-chip">Default Account</span>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">📊</div>
+          <h3 class="feature-card-title">Visual Reports & Analytics</h3>
+          <p class="feature-card-desc">
+            Understand where your money goes. View category distribution, account spending, and tap any slice to drill
+            down directly into matching transactions.
+          </p>
+          <div class="feature-card-chips">
+            <span class="feature-chip">Category Charts</span>
+            <span class="feature-chip">Savings Rate</span>
+            <span class="feature-chip">Drill-Down</span>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">📱</div>
+          <h3 class="feature-card-title">Homescreen Widgets</h3>
+          <p class="feature-card-desc">
+            Two interactive widgets: Financial Overview (with interactive Month/Week toggle & refresh) and Quick Actions
+            (1-tap scan, spend, receive, or transfer).
+          </p>
+          <div class="feature-card-chips">
+            <span class="feature-chip">4x2 Overview</span>
+            <span class="feature-chip">4x1 Quick Actions</span>
+            <span class="feature-chip">Auto Dark/Light</span>
+          </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">🛡️</div>
+          <h3 class="feature-card-title">100% Offline & Private</h3>
+          <p class="feature-card-desc">
+            Your financial numbers are yours alone. All records live in your device only. Zero
+            network requests, zero analytics, zero data mining.
+          </p>
+          <div class="feature-card-chips">
+            <span class="feature-chip">SQLite</span>
+            <span class="feature-chip">No Cloud</span>
+            <span class="feature-chip">Zero Tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Deep-Dive Feature 1: UPI Scanner
+       =================================================================== -->
+  <section class="section section-alt" id="scanner">
+    <div class="container">
+      <div class="feature-showcase-row">
+        <div class="showcase-text reveal">
+          <span class="showcase-badge mint">Camera Speed</span>
+          <h2 class="showcase-title">Scan Any UPI QR Code & Pay in Seconds</h2>
+          <p class="showcase-desc">
+            No more manual typing of merchant names or tedious expense logging after you pay. Open Crebit's scanner,
+            point at the counter QR, and let intelligent parsing do the rest.
+          </p>
+
+          <ul class="showcase-points">
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Universal Recognition:</strong> Works flawlessly with BharatQR, PhonePe, Google Pay, Paytm,
+                BHIM, and merchant dynamic QR codes.</span>
+            </li>
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Automatic Data Extraction:</strong> Instantly parses payee name, UPI ID (`username@bank`),
+                pre-set amount, and reference IDs.</span>
+            </li>
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Seamless UPI App Integration:</strong> Ready to pay? 1-tap launches your installed UPI
+                banking apps with all details pre-filled.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="showcase-visual reveal">
+          <div class="device-frame">
+            <div class="device-screen-wrapper">
+              <img class="theme-screenshot theme-screenshot-light" src="assets/images/light/screenshot-scanner.png"
+                alt="Crebit UPI Scanner Screen (Light Theme)" onerror="this.src='assets/images/screenshot-scanner.png'">
+              <img class="theme-screenshot theme-screenshot-dark" src="assets/images/dark/screenshot-scanner.png"
+                alt="Crebit UPI Scanner Screen (Dark Theme)" onerror="this.src='assets/images/screenshot-scanner.png'">
+            </div>
+            <div class="placeholder-indicator">
+              <span>📷 QR Viewfinder</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Deep-Dive Feature 2: Smart Splits
+       =================================================================== -->
+  <section class="section" id="splits">
+    <div class="container">
+      <div class="feature-showcase-row reversed">
+        <div class="showcase-text reveal">
+          <span class="showcase-badge blue">Receivables Engine</span>
+          <h2 class="showcase-title">Split Group Expenses Without Awkward Follow-ups</h2>
+          <p class="showcase-desc">
+            Paid the dinner bill for your friends or bought shared flat groceries? Record the expense once, enable
+            Split, and Crebit calculates your share versus what others owe you.
+          </p>
+
+          <ul class="showcase-points">
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Equal or Custom Shares:</strong> Divide equally among N people or enter your exact custom
+                portion down to the rupee.</span>
+            </li>
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Unified Receivables KPI:</strong> Always know your total pending receivables at a glance
+                right on the Splits dashboard.</span>
+            </li>
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Batch Repayment Collection:</strong> Got repayments across UPI, Cash, or Bank? Record
+                multiple settlement entries into specific accounts in a single batch.</span>
+            </li>
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Full Settlement Audit:</strong> Visual progress bars and itemized settlement history keep
+                every split transparent.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="showcase-visual reveal">
+          <div class="device-frame">
+            <div class="device-screen-wrapper">
+              <img class="theme-screenshot theme-screenshot-light" src="assets/images/light/screenshot-splits.png"
+                alt="Crebit Splits & Receivables Screen (Light Theme)"
+                onerror="this.src='assets/images/screenshot-splits.png'">
+              <img class="theme-screenshot theme-screenshot-dark" src="assets/images/dark/screenshot-splits.png"
+                alt="Crebit Splits & Receivables Screen (Dark Theme)"
+                onerror="this.src='assets/images/screenshot-splits.png'">
+            </div>
+            <div class="placeholder-indicator">
+              <span>🤝 Splits Dashboard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Deep-Dive Feature 3: Spends & Timeline
+       =================================================================== -->
+  <section class="section section-alt" id="timeline">
+    <div class="container">
+      <div class="feature-showcase-row">
+        <div class="showcase-text reveal">
+          <span class="showcase-badge purple">Spends Timeline</span>
+          <h2 class="showcase-title">Track Incomes, Expenses & Transfers Effortlessly</h2>
+          <p class="showcase-desc">
+            A lightning-fast financial ledger that gives you total clarity over your cash flow. Filter by date, search
+            anything, and organize transactions with custom categories.
+          </p>
+
+          <ul class="showcase-points">
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Three Transaction Types:</strong> Log Incomes (Green), Expenses (Red), and Transfers between
+                accounts (Blue).</span>
+            </li>
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Flexible Date Filtering:</strong> Jump between This Month, This Week, All Time, or pick any
+                Custom Date Range.</span>
+            </li>
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Instant Search:</strong> Filter across transaction titles, merchant names, notes, and
+                categories without lag.</span>
+            </li>
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Batch Management:</strong> Long press any item to enter multi-select mode and bulk delete in
+                one tap.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="showcase-visual reveal">
+          <div class="device-frame">
+            <div class="device-screen-wrapper">
+              <img class="theme-screenshot theme-screenshot-light" src="assets/images/light/screenshot-transactions.png"
+                alt="Crebit Transactions Screen (Light Theme)"
+                onerror="this.src='assets/images/screenshot-transactions.png'">
+              <img class="theme-screenshot theme-screenshot-dark" src="assets/images/dark/screenshot-transactions.png"
+                alt="Crebit Transactions Screen (Dark Theme)"
+                onerror="this.src='assets/images/screenshot-transactions.png'">
+            </div>
+            <div class="placeholder-indicator">
+              <span>💳 Spends Ledger</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Deep-Dive Feature 4: Reports & Net Worth
+       =================================================================== -->
+  <section class="section" id="reports">
+    <div class="container">
+      <div class="feature-showcase-row reversed">
+        <div class="showcase-text reveal">
+          <span class="showcase-badge amber">Deep Analytics</span>
+          <h2 class="showcase-title">Visual Reports & Multi-Account Net Worth</h2>
+          <p class="showcase-desc">
+            Stop guessing where your salary goes. Crebit breaks down your spending into intuitive visual charts and
+            gives you a single consolidated net worth figure.
+          </p>
+
+          <ul class="showcase-points">
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Smart Net Worth:</strong> Combines bank balances, cash, and digital wallets while factoring
+                credit card balances as liabilities.</span>
+            </li>
+            <li class="showcase-point">
+              <span class="point-icon">✓</span>
+              <span><strong>Category & Account Breakdowns:</strong> Visual distribution bars show your biggest expense
+                drivers (Dining, Rent, Shopping, Bills).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="showcase-visual reveal">
+          <div class="device-frame">
+            <div class="device-screen-wrapper">
+              <img class="theme-screenshot theme-screenshot-light" src="assets/images/light/screenshot-reports.png"
+                alt="Crebit Reports & Analytics Screen (Light Theme)"
+                onerror="this.src='assets/images/screenshot-reports.png'">
+              <img class="theme-screenshot theme-screenshot-dark" src="assets/images/dark/screenshot-reports.png"
+                alt="Crebit Reports & Analytics Screen (Dark Theme)"
+                onerror="this.src='assets/images/screenshot-reports.png'">
+            </div>
+            <div class="placeholder-indicator">
+              <span>📊 Analytics Report</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Homescreen Widgets Section
+       =================================================================== -->
+  <section class="section section-alt" id="widgets">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Instant Access</span>
+        <h2 class="section-title">Interactive Android Homescreen Widgets</h2>
+        <p class="section-description">
+          Stay on top of your finances without even opening the app. Crebit ships with two powerful homescreen widgets
+          that automatically adapt to your chosen color theme.
+        </p>
+      </div>
+
+      <div class="widget-cards-grid">
+        <!-- Widget 1 -->
+        <div class="widget-item-card reveal">
+          <div class="widget-item-title">
+            <span>📈 Financial Overview Widget</span>
+            <span class="widget-size-tag">4 × 2 Grid</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.94rem;">
+            Displays Net Cashflow, Total Income, and Total Expense. Features interactive Month/Week toggle chips that
+            switch periods directly on your homescreen, plus an instant refresh button.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="feature-chip">Net Balance KPI</span>
+            <span class="feature-chip">Interactive Month/Week</span>
+            <span class="feature-chip">1-Tap Refresh</span>
+          </div>
+        </div>
+
+        <!-- Widget 2 -->
+        <div class="widget-item-card reveal">
+          <div class="widget-item-title">
+            <span>⚡ Quick Actions Widget</span>
+            <span class="widget-size-tag">4 × 1 Grid</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.94rem;">
+            Instant shortcuts for high-frequency workflows: Scan UPI QR directly from homescreen, log a New Spend,
+            record an Income, or transfer funds between your accounts.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="feature-chip">1-Tap UPI Scanner</span>
+            <span class="feature-chip">Fast Spend Entry</span>
+            <span class="feature-chip">Move Funds</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Widgets Showcase Frame -->
+      <div style="margin-top: 48px; text-align: center;" class="reveal">
+        <div class="device-frame" style="max-width: 480px; margin: 0 auto;">
+          <div class="device-screen-wrapper" style="aspect-ratio: 1 / 1;">
+            <img class="theme-screenshot theme-screenshot-light" src="assets/images/light/screenshot-widgets.png"
+              alt="Crebit Homescreen Widgets Showcase (Light Theme)"
+              onerror="this.src='assets/images/screenshot-widgets.png'">
+            <img class="theme-screenshot theme-screenshot-dark" src="assets/images/dark/screenshot-widgets.png"
+              alt="Crebit Homescreen Widgets Showcase (Dark Theme)"
+              onerror="this.src='assets/images/screenshot-widgets.png'">
+          </div>
+          <div class="placeholder-indicator">
+            <span>📱 Homescreen Widgets</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Privacy & Offline Manifesto
+       =================================================================== -->
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Privacy By Design</span>
+        <h2 class="section-title">Your Finances Are Nobody Else's Business</h2>
+        <p class="section-description">
+          Modern finance apps shouldn't require your phone number, scrape your SMS, or upload your sensitive data to
+          cloud servers. Crebit is built on uncompromising privacy.
+        </p>
+      </div>
+
+      <div class="privacy-grid">
+        <div class="privacy-card reveal">
+          <div class="privacy-card-icon">📴</div>
+          <h3 class="privacy-card-title">100% Offline</h3>
+          <p class="privacy-card-desc">Crebit does not even request the Internet permission in its core ledger. Your
+            data cannot leak because it never leaves your hardware.</p>
+        </div>
+
+        <div class="privacy-card reveal">
+          <div class="privacy-card-icon">🚫</div>
+          <h3 class="privacy-card-title">Zero Advertisements</h3>
+          <p class="privacy-card-desc">No banner ads, no popups, no affiliate promotions, and no third-party tracking
+            SDKs (no Firebase, no Facebook, no telemetry).</p>
+        </div>
+
+        <div class="privacy-card reveal">
+          <div class="privacy-card-icon">🔑</div>
+          <h3 class="privacy-card-title">Zero Sign-in</h3>
+          <p class="privacy-card-desc">No passwords to remember, no emails to verify, and no phone numbers tied to your
+            spending. Just open the app and take control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Download & Installation Section
+       =================================================================== -->
+  <section class="section section-alt" id="download">
+    <div class="container">
+      <div class="download-card reveal">
+        <div class="download-content">
+          <div class="pill-badge" style="margin-bottom: 20px;">
+            <span>🚀 Latest Release v1.0</span>
+          </div>
+
+          <h2 class="download-title">Download Crebit Today</h2>
+          <p class="download-desc">
+            Free, fast, and completely private personal money manager. Download the standalone Android APK directly to
+            your phone.
+          </p>
+
+          <div class="download-btn-group">
+            <a href="download/crebit-app.apk" class="btn btn-primary btn-lg" download="crebit-app.apk">
+              <span>⚡ Download Crebit APK</span>
+            </a>
+          </div>
+
+          <div class="download-meta">
+            <span>📏 Size: <strong>~25 MB</strong></span>
+            <span>📱 Requires: <strong>Android 8.0 or higher</strong></span>
+          </div>
+        </div>
+
+        <!-- 3-step Installation Guide -->
+        <div class="install-steps">
+          <div class="install-step-card">
+            <span class="step-number">STEP 01</span>
+            <h4 class="step-title">Download APK</h4>
+            <p class="step-desc">Tap the download button above to save the <code>crebit-app.apk</code> package to your
+              Android phone.</p>
+          </div>
+
+          <div class="install-step-card">
+            <span class="step-number">STEP 02</span>
+            <h4 class="step-title">Allow Install</h4>
+            <p class="step-desc">Open the downloaded file. If prompted by Android, grant your browser permission to
+              install apps from this source.</p>
+          </div>
+
+          <div class="install-step-card">
+            <span class="step-number">STEP 03</span>
+            <h4 class="step-title">Open & Master Money</h4>
+            <p class="step-desc">Launch Crebit! Add your bank accounts, pin the homescreen widgets, and scan your first
+              UPI QR code.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Frequently Asked Questions (FAQ)
+       =================================================================== -->
+  <section class="section" id="faq">
+    <div class="container container-narrow">
+      <div class="section-header reveal">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">
+          Everything you need to know about Crebit's security, and feature set.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <!-- Q1 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Is Crebit really 100% free and offline?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, absolutely. Crebit is completely free to use, without paywalls, subscriptions, or hidden charges.
+              The application operates entirely offline: all data is stored on-device in a local SQLite database,
+              meaning none of your financial details ever leave your smartphone.</p>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Does Crebit move money or process payments directly?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Crebit does not directly hold your funds or process bank transfers. When you scan a UPI QR code, Crebit
+              parses the merchant details and amount, creates a record in your ledger, and gives you a 1-tap shortcut to
+              launch your installed UPI payment apps (like Google Pay, PhonePe, Paytm, or BHIM) to execute the payment
+              through standard NPCI banking rails.</p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>How do the smart splits work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>When you record any expense transaction, you can toggle "Split Expense". You can either split it equally
+              among N people or enter your custom share. Crebit automatically calculates the remaining receivable
+              balance, tracks it on your Splits dashboard, and lets you log settlements (repayments) into any of your
+              bank accounts or cash in batches.</p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>How does Net Worth calculate credit card balances?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>In Crebit, accounts are classified by type (Bank Account, Cash, Savings, Wallet, or Credit Card). While
+              standard accounts are counted as positive assets, Credit Card balances are treated as liabilities (money
+              owed). Your net worth is accurately computed as Total Assets minus Total Credit Card debt.</p>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Do the Android Homescreen widgets update in real time?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Every time you log, edit, or delete a transaction or settle a split, Crebit dispatches an immediate
+              update to all active homescreen widgets. You can also tap the dedicated refresh button directly on the
+              Overview Widget anytime, and toggle between Month and Week view with a single tap.</p>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>What Android versions are supported?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Crebit supports Android 8.0 Oreo through Android 15+. It is optimized for dynamic theme switching, and
+              smooth edge-to-edge system gestures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Screenshot Guide & Replacement Checklist (Requested by user)
+       =================================================================== -->
+  <!-- <section class="section section-alt" id="screenshots">
+    <div class="container">
+      <div class="screenshots-guide-card reveal">
+        <div class="guide-header">
+          <div class="guide-icon">📸</div>
+          <div>
+            <h3 class="guide-title">Screenshot Assets Guide</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem;">
+              Placeholder screenshots have been rendered in <code>web/assets/images/</code>. You can replace them
+              anytime with real device screenshots.
+            </p>
+          </div>
+        </div>
+
+        <p class="guide-intro">
+          The website supports <strong>theme-adaptive screenshots</strong>. When users switch between Light and Dark
+          themes, the website dynamically loads the corresponding screenshots. Save your light theme captures in
+          <code>web/assets/images/light/</code> and dark theme captures in <code>web/assets/images/dark/</code> using
+          the filenames below. Recommended resolution: <strong>1080 × 2400 px (Portrait)</strong> or standard 9:19.5
+          smartphone aspect ratio.
+        </p>
+
+        <table class="guide-table">
+          <thead>
+            <tr>
+              <th>Feature / Screen</th>
+              <th>Light Theme File</th>
+              <th>Dark Theme File</th>
+              <th>Recommended Content</th>
+              <th>Theme Sync</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hero Dashboard</strong></td>
+              <td><code>light/screenshot-hero.png</code></td>
+              <td><code>dark/screenshot-hero.png</code></td>
+              <td>Home overview showing Net Worth, Month overview card, and recent transaction items.</td>
+              <td><span class="status-badge ready">● Theme-Adaptive</span></td>
+            </tr>
+            <tr>
+              <td><strong>UPI QR Scanner</strong></td>
+              <td><code>light/screenshot-scanner.png</code></td>
+              <td><code>dark/screenshot-scanner.png</code></td>
+              <td>Live camera viewfinder with scanner frame, detected payee details, and UPI app trigger.</td>
+              <td><span class="status-badge ready">● Theme-Adaptive</span></td>
+            </tr>
+            <tr>
+              <td><strong>Smart Bill Splits</strong></td>
+              <td><code>light/screenshot-splits.png</code></td>
+              <td><code>dark/screenshot-splits.png</code></td>
+              <td>Splits screen displaying active receivables KPI, progress bar, and collection modal.</td>
+              <td><span class="status-badge ready">● Theme-Adaptive</span></td>
+            </tr>
+            <tr>
+              <td><strong>Spends & Timeline</strong></td>
+              <td><code>light/screenshot-transactions.png</code></td>
+              <td><code>dark/screenshot-transactions.png</code></td>
+              <td>Transactions list with search bar active, date range chips, and transaction cards.</td>
+              <td><span class="status-badge ready">● Theme-Adaptive</span></td>
+            </tr>
+            <tr>
+              <td><strong>Reports & Analytics</strong></td>
+              <td><code>light/screenshot-reports.png</code></td>
+              <td><code>dark/screenshot-reports.png</code></td>
+              <td>Reports screen showing Category breakdown distribution bars and cashflow analytics.</td>
+              <td><span class="status-badge ready">● Theme-Adaptive</span></td>
+            </tr>
+            <tr>
+              <td><strong>Multi-Account Manager</strong></td>
+              <td><code>light/screenshot-accounts.png</code></td>
+              <td><code>dark/screenshot-accounts.png</code></td>
+              <td>Manage screen showing Bank Accounts, Credit Cards, Cash, and color-coded cards.</td>
+              <td><span class="status-badge ready">● Theme-Adaptive</span></td>
+            </tr>
+            <tr>
+              <td><strong>Homescreen Widgets</strong></td>
+              <td><code>light/screenshot-widgets.png</code></td>
+              <td><code>dark/screenshot-widgets.png</code></td>
+              <td>Android launcher homescreen displaying the Overview Widget and Quick Actions Widget.</td>
+              <td><span class="status-badge ready">● Theme-Adaptive</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ===================================================================
+       Footer
+       =================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <img src="assets/images/logo.png" alt="Crebit Logo">
+            <span>Crebit</span>
+          </div>
+          <p class="footer-brand-desc">
+            Personal Account & Money Manager. An uncompromisingly private, offline financial tracker.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#features" class="footer-link">Features</a></li>
+            <li><a href="#scanner" class="footer-link">UPI Scanner</a></li>
+            <li><a href="#splits" class="footer-link">Smart Splits</a></li>
+            <li><a href="#widgets" class="footer-link">Widgets</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#download" class="footer-link">Download APK</a></li>
+            <li><a href="#privacy" class="footer-link">Privacy Manifesto</a></li>
+            <li><a href="#faq" class="footer-link">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          Developed with ❤️ and AI by <a href="https://www.rameshalagumalai.com" target="_blank"
+            style="color: var(--color-blue);">Ramesh</a>
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="color: var(--color-mint);">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js?v=2.2"></script>
+</body>
+
+</html>
