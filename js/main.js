@@ -244,7 +244,7 @@ function initCounterStats() {
 }
 
 /* ===================================================================
-   7. Mobile Navigation Toggle
+   7. Mobile Navigation Toggle & Drawer
    =================================================================== */
 function initMobileNav() {
   const toggleBtn = document.querySelector('.mobile-toggle');
@@ -252,29 +252,42 @@ function initMobileNav() {
 
   if (!toggleBtn || !navLinks) return;
 
-  toggleBtn.addEventListener('click', () => {
-    const isVisible = navLinks.style.display === 'flex';
-    navLinks.style.display = isVisible ? 'none' : 'flex';
-    if (!isVisible) {
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '72px';
-      navLinks.style.left = '0';
-      navLinks.style.right = '0';
-      navLinks.style.background = 'var(--bg-glass-strong)';
-      navLinks.style.padding = '24px';
-      navLinks.style.borderBottom = '1px solid var(--border-subtle)';
-      navLinks.style.boxShadow = 'var(--card-shadow)';
+  function toggleDrawer() {
+    const isOpen = navLinks.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', isOpen);
+    toggleBtn.textContent = isOpen ? '✕' : '☰';
+  }
+
+  function closeDrawer() {
+    navLinks.classList.remove('open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.textContent = '☰';
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleDrawer();
+  });
+
+  // Close mobile nav when clicking any link inside it
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
+
+  // Close drawer when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      closeDrawer();
     }
   });
 
-  // Close mobile nav on link click
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        navLinks.style.display = 'none';
-      }
-    });
+  // Reset drawer state when resizing to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992 && navLinks.classList.contains('open')) {
+      closeDrawer();
+    }
   });
 }
 
