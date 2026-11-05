@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initCounterStats();
   initMobileNav();
+  initCurrentYear();
 });
 
 /* ===================================================================
@@ -290,4 +291,15 @@ function initMobileNav() {
     }
   });
 }
+
+/* ===================================================================
+   8. Dynamic Current Year
+   =================================================================== */
+function initCurrentYear() {
+  const yearEl = document.getElementById('currentYear');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+}
+
 
